@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launch2">
+
+    <RelativeLayout
+        android:id="@+id/relative1"
+        android:layout_width="400dp"
+        android:layout_height="460dp"
+        android:background="#DDFFFFFF"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:id="@+id/res_imv"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="用户拍摄完的图片"
+            android:src="#00FFFFAA"
+            tools:ignore="HardcodedText" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="400dp"
+        android:layout_height="160dp"
+        android:background="#DDFFFFFF"
+        android:layout_below="@id/relative1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:id="@+id/tv_hor"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="text1\n\t text2\n\n\t\t --name"
+            android:textSize="22sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tv_ver"-->
+        <!--            android:layout_toEndOf="@+id/select_imv"-->
+        <!--            android:layout_marginStart="20dp"-->
+        <!--            android:layout_marginTop="20dp"-->
+        <!--            android:textSize="20sp"-->
+        <!--            android:text="a\na"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            tools:ignore="HardcodedText" />-->
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="400dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:stateListAnimator="@null"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_universal"
+        android:text="保存照片"
+        android:textColor="#DED1D1"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
+
+</RelativeLayout>

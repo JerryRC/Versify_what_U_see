@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">诗你所见</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="button_left">拍\n摄</string>
+    <string name="button_right">本\n地</string>
+
+
+    <string name="title_activity_fullscreen2">FullscreenActivity2</string>
+</resources>

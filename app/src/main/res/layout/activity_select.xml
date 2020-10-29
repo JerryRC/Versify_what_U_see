@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/launch2">
+
+    <ImageView
+        android:id="@+id/select_imv"
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_margin="20dp"
+        android:contentDescription="用户拍摄完的图片"
+        android:src="@mipmap/main_background_img"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/myMenu"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="15dp"
+        android:stateListAnimator="@null"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_universal"
+        android:text="意 象 匹 配 结 果"
+        android:textColor="#DED1D1"
+        android:textSize="25sp"
+        tools:ignore="HardcodedText" />
+
+    <com.example.poetrywhatusee.MyViewDragHelper
+        android:id="@+id/myCustom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/myLl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <com.example.poetrywhatusee.FragEdge
+                android:id="@+id/myBlankView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1000" />
+
+            <com.example.poetrywhatusee.MyScroView
+                android:id="@+id/myScroView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/select_back">
+
+            <!-- 滚动视图中同级别的只能有一个
+                 所以创建一个 LinearLayout 包着其他 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tv_match"
+                        android:text="下面是识别出的意象哦"
+                        tools:ignore="HardcodedText"
+                        android:textSize="18sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                <!--    这里是已经匹配到的意象列表-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rv_button" />
+
+                    <TextView
+                        android:id="@+id/tv_choose"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:textSize="18sp"
+                        android:text="再加一点意境吧"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/linear_mood"
+                        android:layout_marginStart="8dp">
+
+                        <CheckBox
+                            android:id="@+id/cb_m1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="很开心"
+                            android:padding="4sp"
+                            android:textColor="#424F4E"
+                            android:textSize="20sp"
+                            android:button="@null"
+                            android:background="@drawable/bg_checkbox"
+                            android:layout_marginTop="8dp"
+                            tools:ignore="HardcodedText" />
+
+                        <CheckBox
+                            android:id="@+id/cb_m2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="有点小悲伤"
+                            android:padding="4sp"
+                            android:textColor="#424F4E"
+                            android:textSize="20sp"
+                            android:button="@null"
+                            android:background="@drawable/bg_checkbox"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="16dp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/linear_weather"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="78dp">
+
+                        <CheckBox
+                            android:id="@+id/cb_w1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="阳光正好"
+                            android:padding="4sp"
+                            android:textColor="#424F4E"
+                            android:textSize="20sp"
+                            android:button="@null"
+                            android:background="@drawable/bg_checkbox"
+                            android:layout_marginTop="8dp"
+                            tools:ignore="HardcodedText" />
+
+                        <CheckBox
+                            android:id="@+id/cb_w2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="雨朦朦"
+                            android:padding="4sp"
+                            android:textColor="#424F4E"
+                            android:textSize="20sp"
+                            android:button="@null"
+                            android:background="@drawable/bg_checkbox"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginStart="16dp"
+                            tools:ignore="HardcodedText" />
+
+                    </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/linear_weather2"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="148dp">
+
+                    <CheckBox
+                        android:id="@+id/cb_w3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="好多云"
+                        android:padding="4sp"
+                        android:textColor="#424F4E"
+                        android:textSize="20sp"
+                        android:button="@null"
+                        android:background="@drawable/bg_checkbox"
+                        android:layout_marginTop="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <CheckBox
+                        android:id="@+id/cb_w4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:text="清风明月"
+                        android:padding="4sp"
+                        android:textColor="#424F4E"
+                        android:textSize="20sp"
+                        android:button="@null"
+                        android:background="@drawable/bg_checkbox"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginStart="16dp"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_confer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="确认"
+                        android:textSize="20sp"
+                        android:background="@drawable/button_universal"
+                        android:layout_marginTop="40dp"
+                        android:layout_marginBottom="20dp"
+                        android:textColor="#DED1D1"
+                        tools:ignore="HardcodedText" />
+
+                </LinearLayout>
+
+            </com.example.poetrywhatusee.MyScroView>
+
+        </LinearLayout>
+
+    </com.example.poetrywhatusee.MyViewDragHelper>
+
+</RelativeLayout>
